@@ -1,0 +1,6 @@
+com\albertoruvel\credit\web\data\dto\AuthenticationResult.class
+com\albertoruvel\credit\web\config\ContextListener.class
+com\albertoruvel\credit\web\data\dto\NewAccountRequest.class
+com\albertoruvel\credit\web\data\UserAccount.class
+com\albertoruvel\credit\web\resource\SignupResource.class
+com\albertoruvel\credit\web\service\impl\AccountService.class
