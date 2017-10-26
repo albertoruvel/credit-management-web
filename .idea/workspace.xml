@@ -1,76 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5fc1146b-ba1d-4170-85d5-f3c50fabbc02" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/resource/AccountResource.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_inject_extensions_guice_servlet_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_inject_guice_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_contribs_jersey_guice_1_19.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_json_1_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_server_1_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_servlet_1_19.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_2_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_stream_stax_api_1_0_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_7_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_jaxrs_1_7_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_7_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_xc_1_7_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_aopalliance_repackaged_2_4_0_b10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_guice_bridge_2_4_0_b10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_api_2_4_0_b10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_utils_2_4_0_b10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/resource/SignupResource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/TestService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/TestServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/classes/com/albertoruvel/credit/web/data/dto/AuthenticationResult.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/classes/com/albertoruvel/credit/web/data/dto/NewAccountRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/classes/com/albertoruvel/credit/web/resource/SignupResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/classes/com/albertoruvel/credit/web/service/impl/AccountService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/activation-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/aopalliance-repackaged-2.4.0-b10.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/guice-4.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/guice-bridge-2.4.0-b10.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/guice-servlet-4.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/hk2-api-2.4.0-b10.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/hk2-utils-2.4.0-b10.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/jackson-core-asl-1.7.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/jackson-jaxrs-1.7.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/jackson-mapper-asl-1.7.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/jackson-xc-1.7.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/jaxb-api-2.2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/jaxb-impl-2.2.3-1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/jersey-core-1.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/jersey-guice-1.19.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/jersey-json-1.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/jersey-server-1.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/jersey-servlet-1.19.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/jettison-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/stax-api-1.0-2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/lib/stax-api-1.0.1.jar" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/dto/AuthenticationResult.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/dto/resp/AuthenticationResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/dto/NewAccountRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/dto/req/NewAccountRequest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/AccountService.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/AccountServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/classes/com/albertoruvel/credit/web/config/ContextListener.class" afterPath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/classes/com/albertoruvel/credit/web/config/ContextListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/credit-management-web.iml" afterPath="$PROJECT_DIR$/credit-management-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/config/ContextListener.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/config/ContextListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/credit-management-web-0.1.0-SNAPSHOT/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-    </list>
+    <list default="true" id="5fc1146b-ba1d-4170-85d5-f3c50fabbc02" name="Default" comment="" />
     <ignored path="credit-management-web.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1130,14 +1061,14 @@
         <state relative-caret-position="102">
           <caret line="6" column="66" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
           <folding>
-            <element signature="e#312#313#0" expanded="true" />
-            <element signature="e#341#342#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#532#533#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#312#313#0" expanded="false" />
+            <element signature="e#341#342#0" expanded="false" />
+            <element signature="e#386#387#0" expanded="false" />
+            <element signature="e#422#423#0" expanded="false" />
+            <element signature="e#456#457#0" expanded="false" />
+            <element signature="e#486#487#0" expanded="false" />
+            <element signature="e#532#533#0" expanded="false" />
+            <element signature="e#570#571#0" expanded="false" />
           </folding>
         </state>
       </provider>
