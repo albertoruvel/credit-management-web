@@ -8,6 +8,7 @@ import javax.ws.rs.core.Response;
 import com.albertoruvel.credit.web.data.dto.req.AccountSigninRequest;
 import com.albertoruvel.credit.web.data.dto.req.NewAccountRequest;
 import com.albertoruvel.credit.web.service.AccountService;
+import com.albertoruvel.credit.web.service.core.Secured;
 
 @Path("account")
 public class AccountResource {
@@ -31,10 +32,11 @@ public class AccountResource {
         return accountService.signin(request);
     }
 
-    @POST
-    @Path("validateToken")
+    @GET
+    @Path("config")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response validateToken(@QueryParam("token")String token){
-        return accountService.validateToken(token);
+    @Secured
+    public Response getUserConfiguration(@HeaderParam("Authorization")String token) throws Exception{
+        return accountService.userConfiguration(token);
     }
 }

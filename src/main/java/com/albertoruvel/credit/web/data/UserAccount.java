@@ -16,6 +16,7 @@ public class UserAccount {
 	private String lastName;
 	private String password;
 	private String token;
+	private String monthlyIncome;
 
 	public UserAccount() {
 		this.id = UUID.randomUUID().toString();
@@ -67,5 +68,13 @@ public class UserAccount {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getMonthlyIncome() {
+		return monthlyIncome;
+	}
+
+	public void setMonthlyIncome(String monthlyIncome) {
+		this.monthlyIncome = monthlyIncome;
 	}
 }

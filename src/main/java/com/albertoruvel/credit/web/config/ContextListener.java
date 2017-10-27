@@ -1,6 +1,7 @@
 package com.albertoruvel.credit.web.config;
 
 import com.albertoruvel.credit.web.data.UserAccount;
+import com.albertoruvel.credit.web.data.UserConfiguration;
 import com.albertoruvel.credit.web.service.AccountService;
 import com.albertoruvel.credit.web.service.DataStoreService;
 import com.albertoruvel.credit.web.service.impl.AccountServiceImpl;
@@ -18,6 +19,7 @@ public class ContextListener extends GuiceServletContextListener {
 
     private void registerDatastoreEntities(){
         register(UserAccount.class);
+        register(UserConfiguration.class);
     }
 
     @Override

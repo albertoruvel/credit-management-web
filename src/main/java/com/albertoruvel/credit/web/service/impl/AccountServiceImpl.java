@@ -1,10 +1,12 @@
 package com.albertoruvel.credit.web.service.impl;
 
 import com.albertoruvel.credit.web.data.UserAccount;
+import com.albertoruvel.credit.web.data.UserConfiguration;
 import com.albertoruvel.credit.web.data.dto.req.AccountSigninRequest;
 import com.albertoruvel.credit.web.data.dto.resp.AuthenticationResult;
 import com.albertoruvel.credit.web.data.dto.req.NewAccountRequest;
 import com.albertoruvel.credit.web.data.dto.resp.TokenValidationResult;
+import com.albertoruvel.credit.web.data.dto.resp.UserConfigurationResult;
 import com.albertoruvel.credit.web.service.AccountService;
 import com.albertoruvel.credit.web.service.DataStoreService;
 
@@ -50,22 +52,43 @@ public class AccountServiceImpl implements AccountService {
         UserAccount account = dataStoreService.getAccount(request.getEmail(), request.getPassword());
         if (account == null) {
             return Response.ok(new AuthenticationResult(false, "Wrong credentials, try again", "")).build();
-        }else{
+        } else {
             return Response.ok(new AuthenticationResult(true, "", account.getToken())).build();
         }
     }
 
     @Override
     public Response validateToken(String token) throws Exception {
-        if (token == null || token.isEmpty()){
+        if (token == null || token.isEmpty()) {
             return Response.ok(new TokenValidationResult(false, "Security token was not provided")).build();
         }
         //find the token
-        if (dataStoreService.isTokenValid(token)){
+        if (dataStoreService.isTokenValid(token)) {
             return Response.ok(new TokenValidationResult(true, "Token already valid")).build();
-        }else {
+        } else {
             return Response.ok(new TokenValidationResult(false, "Token is not valid")).build();
         }
+    }
+
+    @Override
+    public Response userConfiguration(String token) throws Exception {
+        //get user using token
+        UserAccount account = dataStoreService.getAccountByToken(token);
+        if (account == null) {
+            throw new RuntimeException("No account was found for specified token");
+        }
+        UserConfiguration configuration = dataStoreService.getUserConfiguration(account.getId());
+        if (configuration == null) {
+            //create a new one
+            configuration = new UserConfiguration();
+            configuration.setMonthlyIncome(0L);
+            configuration.setNotificationEnabled(Boolean.TRUE);
+            configuration.setUserId(account.getId());
+            //save it
+            dataStoreService.saveConfiguration(configuration);
+        }
+        //create response
+        return Response.ok(new UserConfigurationResult(account.getName() + " " + account.getLastName(), account.getEmail(), configuration.getMonthlyIncome(), configuration.isNotificationEnabled())).build();
     }
 
 }

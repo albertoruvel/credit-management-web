@@ -29,4 +29,12 @@ public interface AccountService {
      * @throws Exception
      */
     public Response validateToken(String token)throws Exception;
+
+    /**
+     * Get current user configuration using a token
+     * @param token
+     * @return
+     * @throws Exception
+     */
+    public Response userConfiguration(String token) throws Exception;
 }
