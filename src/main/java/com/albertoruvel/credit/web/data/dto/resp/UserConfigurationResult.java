@@ -13,6 +13,9 @@ public class UserConfigurationResult {
         this.notificationEnabled = notificationEnabled;
     }
 
+    public UserConfigurationResult() {
+    }
+
     public String getName() {
         return name;
     }

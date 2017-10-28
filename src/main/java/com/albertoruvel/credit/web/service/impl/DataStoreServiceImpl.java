@@ -1,9 +1,12 @@
 package com.albertoruvel.credit.web.service.impl;
 
+import com.albertoruvel.credit.web.data.CreditCard;
+import com.albertoruvel.credit.web.data.CreditCardPurchase;
 import com.albertoruvel.credit.web.data.UserAccount;
 import com.albertoruvel.credit.web.data.UserConfiguration;
 import com.albertoruvel.credit.web.service.DataStoreService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.googlecode.objectify.ObjectifyService.ofy;
@@ -70,7 +73,7 @@ public class DataStoreServiceImpl implements DataStoreService {
     @Override
     public UserConfiguration getUserConfiguration(String userId) {
         for (UserConfiguration config : getConfigurations()) {
-            if(config.getUserId().equals(userId)) {
+            if (config.getUserId().equals(userId)) {
                 return config;
             }
         }
@@ -81,5 +84,35 @@ public class DataStoreServiceImpl implements DataStoreService {
     public void saveConfiguration(UserConfiguration configuration) {
         ofy().save().entity(configuration).now();
     }
+
+    @Override
+    public void saveUserCreditCard(CreditCard creditCard) {
+        ofy().save().entity(creditCard).now();
+    }
+
+    @Override
+    public List<CreditCard> getCreditCards(String userId) {
+        List<CreditCard> list = ofy().load().type(CreditCard.class).list();
+        List<CreditCard> userCreditCards = new ArrayList<>();
+        for (CreditCard card : list) {
+            if (card.getUserId().equals(userId)) {
+                userCreditCards.add(card);
+            }
+        }
+        return userCreditCards;
+    }
+
+    @Override
+    public List<CreditCardPurchase> getCreditCardPurchases(String id) {
+        List<CreditCardPurchase> allPurchases = ofy().load().type(CreditCardPurchase.class).list();
+        List<CreditCardPurchase> cardPurchases = new ArrayList<>();
+        for (CreditCardPurchase purchase : allPurchases) {
+            if (purchase.getCreditCardId().equals(id)){
+                cardPurchases.add(purchase);
+            }
+        }
+        return cardPurchases;
+    }
+
 
 }

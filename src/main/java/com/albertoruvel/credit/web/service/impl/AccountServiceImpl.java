@@ -5,6 +5,7 @@ import com.albertoruvel.credit.web.data.UserConfiguration;
 import com.albertoruvel.credit.web.data.dto.req.AccountSigninRequest;
 import com.albertoruvel.credit.web.data.dto.resp.AuthenticationResult;
 import com.albertoruvel.credit.web.data.dto.req.NewAccountRequest;
+import com.albertoruvel.credit.web.data.dto.resp.ExecutionResult;
 import com.albertoruvel.credit.web.data.dto.resp.TokenValidationResult;
 import com.albertoruvel.credit.web.data.dto.resp.UserConfigurationResult;
 import com.albertoruvel.credit.web.service.AccountService;
@@ -89,6 +90,31 @@ public class AccountServiceImpl implements AccountService {
         }
         //create response
         return Response.ok(new UserConfigurationResult(account.getName() + " " + account.getLastName(), account.getEmail(), configuration.getMonthlyIncome(), configuration.isNotificationEnabled())).build();
+    }
+
+    @Override
+    public Response saveUserConfiguration(String token, UserConfigurationResult request) throws Exception {
+        //get account
+        UserAccount account = dataStoreService.getAccountByToken(token);
+        if (account == null) {
+            throw new RuntimeException("No account was found for specified token");
+        }
+
+        //update configuration
+        UserConfiguration configuration = dataStoreService.getUserConfiguration(account.getId());
+        if (configuration == null) {
+            log.info("Creating new user configuration");
+            configuration = new UserConfiguration();
+        } else {
+            log.info("Updating configuration");
+            configuration.setMonthlyIncome(request.getMonthlyIncome());
+            configuration.setUserId(account.getId());
+            configuration.setNotificationEnabled(request.isNotificationEnabled());
+        }
+
+        dataStoreService.saveConfiguration(configuration);
+        log.info("Configuration has been saved");
+        return Response.ok(new ExecutionResult("Success", true)).build();
     }
 
 }

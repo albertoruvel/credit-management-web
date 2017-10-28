@@ -1,10 +1,13 @@
 package com.albertoruvel.credit.web.config;
 
+import com.albertoruvel.credit.web.data.CreditCard;
 import com.albertoruvel.credit.web.data.UserAccount;
 import com.albertoruvel.credit.web.data.UserConfiguration;
 import com.albertoruvel.credit.web.service.AccountService;
+import com.albertoruvel.credit.web.service.CreditCardService;
 import com.albertoruvel.credit.web.service.DataStoreService;
 import com.albertoruvel.credit.web.service.impl.AccountServiceImpl;
+import com.albertoruvel.credit.web.service.impl.CreditCardServiceImpl;
 import com.albertoruvel.credit.web.service.impl.DataStoreServiceImpl;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -20,6 +23,7 @@ public class ContextListener extends GuiceServletContextListener {
     private void registerDatastoreEntities(){
         register(UserAccount.class);
         register(UserConfiguration.class);
+        register(CreditCard.class);
     }
 
     @Override
@@ -34,6 +38,7 @@ public class ContextListener extends GuiceServletContextListener {
                 rest("/rest/*").packages(RESOURCES_PACKAGE);
                 bind(AccountService.class).to(AccountServiceImpl.class).in(Scopes.SINGLETON);
                 bind(DataStoreService.class).to(DataStoreServiceImpl.class).in(Scopes.SINGLETON);
+                bind(CreditCardService.class).to(CreditCardServiceImpl.class).in(Scopes.SINGLETON);
             }
         });
     }

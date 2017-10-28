@@ -14,6 +14,7 @@ import javax.ws.rs.ext.Provider;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Provider
 @Secured
@@ -47,6 +48,7 @@ public class AuthenticationFilter implements ContainerRequestFilter {
         List<UserAccount> accounts = ObjectifyService.ofy().load().type(UserAccount.class).list();
         for(UserAccount account : accounts){
             if (account.getToken().equals(token)){
+                Logger.getLogger(getClass().getName()).info("Authenticated user with token " + token);
                 return;
             }
         }

@@ -7,6 +7,7 @@ import javax.ws.rs.core.Response;
 
 import com.albertoruvel.credit.web.data.dto.req.AccountSigninRequest;
 import com.albertoruvel.credit.web.data.dto.req.NewAccountRequest;
+import com.albertoruvel.credit.web.data.dto.resp.UserConfigurationResult;
 import com.albertoruvel.credit.web.service.AccountService;
 import com.albertoruvel.credit.web.service.core.Secured;
 
@@ -38,5 +39,14 @@ public class AccountResource {
     @Secured
     public Response getUserConfiguration(@HeaderParam("Authorization")String token) throws Exception{
         return accountService.userConfiguration(token);
+    }
+
+    @POST
+    @Path("config")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Secured
+    public Response saveUserConfiguration(@HeaderParam("Authorization")String token, UserConfigurationResult request) throws Exception{
+        return accountService.saveUserConfiguration(token, request);
     }
 }
