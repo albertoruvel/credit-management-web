@@ -10,17 +10,19 @@ import java.util.List;
 
 public interface DataStoreService {
 
+    //generic crud operations
+    public void saveEntity(Object entity);
+    public <T> T getEntity(String id, Class type);
+    public void deleteEntity(String id, Class type);
+
     //account operations
-    public void addAccount(UserAccount account);
     public boolean isEmailRegistered(String email);
     public UserAccount getAccount(String email, String password);
     public boolean isTokenValid(String token);
     public UserAccount getAccountByToken(String token);
     public UserConfiguration getUserConfiguration(String userId);
-    public void saveConfiguration(UserConfiguration configuration);
 
     //credit card operations
-    public void saveUserCreditCard(CreditCard creditCard);
     public List<CreditCard> getCreditCards(String userId);
     public List<CreditCardPurchase> getCreditCardPurchases(String id);
 }

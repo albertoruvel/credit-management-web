@@ -1,6 +1,7 @@
 package com.albertoruvel.credit.web.service;
 
 
+import com.albertoruvel.credit.web.data.dto.req.NewCreditCardPurchase;
 import com.albertoruvel.credit.web.data.dto.req.NewCreditCardRequest;
 
 import javax.ws.rs.core.Response;
@@ -31,4 +32,13 @@ public interface CreditCardService {
      * @throws Exception
      */
     public Response getPieChartByCreditCards(String token) throws Exception;
+
+    /**
+     * Add a new purchase to a credit card
+     * @param header
+     * @param purchase
+     * @return
+     * @throws Exception
+     */
+    public Response addNewCreditCardPurchase(String header, NewCreditCardPurchase purchase)throws Exception;
 }

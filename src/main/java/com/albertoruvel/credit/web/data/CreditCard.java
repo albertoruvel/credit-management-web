@@ -2,6 +2,7 @@ package com.albertoruvel.credit.web.data;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 
 import java.util.UUID;
 
@@ -15,6 +16,8 @@ public class CreditCard {
     private Double maxSalary;
     private String periodDate;
     private String payDate;
+
+    @Index
     private String userId;
     private String registrationDate;
 

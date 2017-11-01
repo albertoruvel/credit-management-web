@@ -2,6 +2,7 @@ package com.albertoruvel.credit.web.data;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 
 import java.util.UUID;
 
@@ -10,12 +11,13 @@ public class CreditCardPurchase {
 
     @Id
     private String id;
+
+    @Index
     private String creditCardId;
     private String concept;
+    private String description;
     private Double total;
     private Integer months;
-    private boolean containingInterests;
-    private Double interest;
     private String purchaseDate;
     private Integer paymentsLeft;
 
@@ -63,22 +65,6 @@ public class CreditCardPurchase {
         this.months = months;
     }
 
-    public boolean isContainingInterests() {
-        return containingInterests;
-    }
-
-    public void setContainingInterests(boolean containingInterests) {
-        this.containingInterests = containingInterests;
-    }
-
-    public Double getInterest() {
-        return interest;
-    }
-
-    public void setInterest(Double interest) {
-        this.interest = interest;
-    }
-
     public String getPurchaseDate() {
         return purchaseDate;
     }
@@ -93,5 +79,13 @@ public class CreditCardPurchase {
 
     public void setPaymentsLeft(Integer paymentsLeft) {
         this.paymentsLeft = paymentsLeft;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

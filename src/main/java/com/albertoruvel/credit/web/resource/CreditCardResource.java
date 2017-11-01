@@ -1,5 +1,6 @@
 package com.albertoruvel.credit.web.resource;
 
+import com.albertoruvel.credit.web.data.dto.req.NewCreditCardPurchase;
 import com.albertoruvel.credit.web.data.dto.req.NewCreditCardRequest;
 import com.albertoruvel.credit.web.service.CreditCardService;
 import com.albertoruvel.credit.web.service.core.Secured;
@@ -36,4 +37,13 @@ public class CreditCardResource {
     public Response getCreditCardsPieChart(@HeaderParam("Authorization")String token)throws Exception {
         return creditCardService.getPieChartByCreditCards(token);
     }
+
+    @POST
+    @Path("{cardId}/purchase")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response createCreditCardPurchase(@HeaderParam("Authorization")String token, NewCreditCardPurchase request)throws Exception{
+        return creditCardService.addNewCreditCardPurchase(token, request);
+    }
+
 }

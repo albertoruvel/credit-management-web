@@ -2,6 +2,7 @@ package com.albertoruvel.credit.web.data;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 import com.googlecode.objectify.annotation.Subclass;
 
 import java.util.UUID;
@@ -11,12 +12,17 @@ public class UserAccount {
 
 	@Id
 	private String id;
+
+	@Index
 	private String email;
 	private String name;
 	private String lastName;
+
+	@Index
 	private String password;
+
+	@Index
 	private String token;
-	private String monthlyIncome;
 
 	public UserAccount() {
 		this.id = UUID.randomUUID().toString();
@@ -70,11 +76,4 @@ public class UserAccount {
 		this.id = id;
 	}
 
-	public String getMonthlyIncome() {
-		return monthlyIncome;
-	}
-
-	public void setMonthlyIncome(String monthlyIncome) {
-		this.monthlyIncome = monthlyIncome;
-	}
 }

@@ -1,6 +1,7 @@
 package com.albertoruvel.credit.web.config;
 
 import com.albertoruvel.credit.web.data.CreditCard;
+import com.albertoruvel.credit.web.data.CreditCardPurchase;
 import com.albertoruvel.credit.web.data.UserAccount;
 import com.albertoruvel.credit.web.data.UserConfiguration;
 import com.albertoruvel.credit.web.service.AccountService;
@@ -24,6 +25,7 @@ public class ContextListener extends GuiceServletContextListener {
         register(UserAccount.class);
         register(UserConfiguration.class);
         register(CreditCard.class);
+        register(CreditCardPurchase.class);
     }
 
     @Override

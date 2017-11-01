@@ -2,6 +2,7 @@ package com.albertoruvel.credit.web.data;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 
 import java.util.UUID;
 
@@ -12,6 +13,8 @@ public class UserConfiguration {
     private String id;
     private Long monthlyIncome;
     private boolean notificationEnabled;
+
+    @Index
     private String userId;
 
     public UserConfiguration() {

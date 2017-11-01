@@ -35,7 +35,7 @@ public class AccountServiceImpl implements AccountService {
             newAccount.setEmail(account.getEmail());
             newAccount.setPassword(account.getPassword());
             newAccount.setToken(UUID.randomUUID().toString());
-            dataStoreService.addAccount(newAccount);
+            dataStoreService.saveEntity(newAccount);
             return Response.ok(new AuthenticationResult(true, "Signed up successfully", newAccount.getToken())).build();
         }
     }
@@ -86,7 +86,7 @@ public class AccountServiceImpl implements AccountService {
             configuration.setNotificationEnabled(Boolean.TRUE);
             configuration.setUserId(account.getId());
             //save it
-            dataStoreService.saveConfiguration(configuration);
+            dataStoreService.saveEntity(configuration);
         }
         //create response
         return Response.ok(new UserConfigurationResult(account.getName() + " " + account.getLastName(), account.getEmail(), configuration.getMonthlyIncome(), configuration.isNotificationEnabled())).build();
@@ -112,7 +112,7 @@ public class AccountServiceImpl implements AccountService {
             configuration.setNotificationEnabled(request.isNotificationEnabled());
         }
 
-        dataStoreService.saveConfiguration(configuration);
+        dataStoreService.saveEntity(configuration);
         log.info("Configuration has been saved");
         return Response.ok(new ExecutionResult("Success", true)).build();
     }
