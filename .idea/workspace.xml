@@ -3,17 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5fc1146b-ba1d-4170-85d5-f3c50fabbc02" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/credit-management-web.iml" afterPath="$PROJECT_DIR$/credit-management-web.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/config/ContextListener.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/config/ContextListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/CreditCard.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/CreditCard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/CreditCardPurchase.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/CreditCardPurchase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/UserAccount.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/UserAccount.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/UserConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/UserConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/resource/CreditCardResource.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/resource/CreditCardResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/CreditCardService.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/CreditCardService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/DataStoreService.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/DataStoreService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/AccountServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/AccountServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/CreditCardServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/CreditCardServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/DataStoreServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/DataStoreServiceImpl.java" />
     </list>
     <ignored path="credit-management-web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreditCardResource.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CreditCardResource.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/resource/CreditCardResource.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="407">
@@ -55,6 +47,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContextListener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/config/ContextListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,7 +90,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/TestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/TestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/TestServiceImpl.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/resource/SignupResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/dto/req/NewAccountRequest.java" />
@@ -114,7 +115,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/dto/req/NewCreditCardRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/dto/resp/CreditCardData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/dto/resp/PieChartItem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/config/ContextListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/CreditCard.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/UserConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/UserAccount.java" />
@@ -126,6 +126,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/CreditCardPurchase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/CreditCardServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/resource/CreditCardResource.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/config/ContextListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/CreditCardPeriodCheckJob.java" />
       </list>
     </option>
   </component>
@@ -247,6 +250,10 @@
               <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -271,10 +278,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -679,20 +682,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/inject/guice/3.0/guice-3.0.jar!/com/google/inject/Injector.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/inject/extensions/guice-servlet/4.0/guice-servlet-4.0.jar!/com/google/inject/servlet/GuiceServletContextListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/sun/jersey/contribs/jersey-guice/1.19/jersey-guice-1.19.jar!/META-INF/maven/com.sun.jersey.contribs/jersey-guice/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -735,14 +724,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/AbstractEntity.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/TestService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/impl/TestServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
@@ -958,14 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/config/ContextListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/data/dto/req/NewCreditCardPurchase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1018,6 +991,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/resource/CreditCardResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
@@ -1025,6 +1006,32 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.2.1/quartz-2.2.1.jar!/org/quartz/JobExecutionContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/service/CreditCardPeriodCheckJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/albertoruvel/credit/web/config/ContextListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
