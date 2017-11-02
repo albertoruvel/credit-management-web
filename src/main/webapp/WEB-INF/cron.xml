@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+    <cron>
+        <url>/rest/job/periods</url>
+        <description>Invoked to get credit cards period time and send PUSH notifications to users about dates and payments</description>
+        <schedule>every 24 hours</schedule>
+        <!-- <schedule>every 2 minutes</schedule> -->
+    </cron>
+</cronentries>

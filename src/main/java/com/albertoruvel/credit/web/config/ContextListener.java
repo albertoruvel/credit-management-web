@@ -5,7 +5,6 @@ import com.albertoruvel.credit.web.data.CreditCardPurchase;
 import com.albertoruvel.credit.web.data.UserAccount;
 import com.albertoruvel.credit.web.data.UserConfiguration;
 import com.albertoruvel.credit.web.service.AccountService;
-import com.albertoruvel.credit.web.service.job.CreditCardPeriodCheckJob;
 import com.albertoruvel.credit.web.service.CreditCardService;
 import com.albertoruvel.credit.web.service.DataStoreService;
 import com.albertoruvel.credit.web.service.impl.AccountServiceImpl;
@@ -15,8 +14,6 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Scopes;
 import com.google.inject.servlet.GuiceServletContextListener;
-import org.quartz.*;
-import org.quartz.impl.StdSchedulerFactory;
 
 import java.util.logging.Logger;
 
@@ -38,7 +35,7 @@ public class ContextListener extends GuiceServletContextListener {
     protected Injector getInjector() {
         //register data store entities
         registerDatastoreEntities();
-        startScheduler();
+        //startScheduler();
         //create injector
         return Guice.createInjector(new RestServletModule(){
             @Override
@@ -47,11 +44,12 @@ public class ContextListener extends GuiceServletContextListener {
                 bind(AccountService.class).to(AccountServiceImpl.class).in(Scopes.SINGLETON);
                 bind(DataStoreService.class).to(DataStoreServiceImpl.class).in(Scopes.SINGLETON);
                 bind(CreditCardService.class).to(CreditCardServiceImpl.class).in(Scopes.SINGLETON);
+                bind(FcmPropertiesLoader.class).in(Scopes.SINGLETON);
             }
         });
     }
 
-    private void startScheduler() {
+    /**private void startScheduler() {
         try{
             log.info("Creating scheduled jobs...");
             Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
@@ -66,5 +64,5 @@ public class ContextListener extends GuiceServletContextListener {
         }catch(SchedulerException ex){
             log.severe("Could not start scheduled jobs: " + ex.getMessage());
         }
-    }
+    }**/
 }

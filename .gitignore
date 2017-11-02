@@ -4,3 +4,4 @@ target/
 .settings/
 .project
 *.iml
+src/main/resources/META-INF/fcm-props.properties
