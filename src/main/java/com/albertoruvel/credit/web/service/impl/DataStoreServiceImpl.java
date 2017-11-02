@@ -68,10 +68,16 @@ public class DataStoreServiceImpl implements DataStoreService {
     }
 
     @Override
+    public CreditCard getCreditCard(String id, String userId) {
+        return ofy().load().type(CreditCard.class).filter("id", id).filter("userId", userId).first().now();
+    }
+
+    @Override
     public List<CreditCardPurchase> getCreditCardPurchases(String id) {
         return ofy().load().type(CreditCardPurchase.class)
                 .filter("creditCardId", id).list();
     }
+
 
 
 }

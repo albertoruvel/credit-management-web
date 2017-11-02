@@ -10,6 +10,7 @@ public interface CreditCardService {
 
     /**
      * saves a new credit card info
+     *
      * @param token
      * @param request
      * @return
@@ -19,14 +20,16 @@ public interface CreditCardService {
 
     /**
      * get a user credit cards using an authentication token
+     *
      * @param token
      * @return
      * @throws Exception
      */
-    public Response getUserCreditCards(String token)throws Exception;
+    public Response getUserCreditCards(String token) throws Exception;
 
     /**
      * Get pie chart data from credit cards purchases and free cash for the month
+     *
      * @param token
      * @return
      * @throws Exception
@@ -35,10 +38,20 @@ public interface CreditCardService {
 
     /**
      * Add a new purchase to a credit card
+     *
      * @param header
      * @param purchase
      * @return
      * @throws Exception
      */
-    public Response addNewCreditCardPurchase(String header, NewCreditCardPurchase purchase)throws Exception;
+    public Response addNewCreditCardPurchase(String header, NewCreditCardPurchase purchase) throws Exception;
+
+    /**
+     * Get a credit card purchases
+     * @param token
+     * @param cardId
+     * @return
+     * @throws Exception
+     */
+    public Response getCreditCardPurchases(String token, String cardId) throws Exception;
 }

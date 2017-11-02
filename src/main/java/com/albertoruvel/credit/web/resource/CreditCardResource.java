@@ -21,29 +21,36 @@ public class CreditCardResource {
     @Path("create")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response saveNewCreditCard(@HeaderParam("Authorization")String token, NewCreditCardRequest request) throws Exception{
+    public Response saveNewCreditCard(@HeaderParam("Authorization") String token, NewCreditCardRequest request) throws Exception {
         return creditCardService.saveCreditCard(token, request);
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getUserCreditCards(@HeaderParam("Authorization")String token)throws Exception{
+    public Response getUserCreditCards(@HeaderParam("Authorization") String token) throws Exception {
         return creditCardService.getUserCreditCards(token);
     }
 
     @GET
     @Path("pie")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getCreditCardsPieChart(@HeaderParam("Authorization")String token)throws Exception {
+    public Response getCreditCardsPieChart(@HeaderParam("Authorization") String token) throws Exception {
         return creditCardService.getPieChartByCreditCards(token);
     }
 
     @POST
-    @Path("{cardId}/purchase")
+    @Path("purchase/create")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createCreditCardPurchase(@HeaderParam("Authorization")String token, NewCreditCardPurchase request)throws Exception{
+    public Response createCreditCardPurchase(@HeaderParam("Authorization") String token, NewCreditCardPurchase request) throws Exception {
         return creditCardService.addNewCreditCardPurchase(token, request);
+    }
+
+    @GET
+    @Path("{cardId}/purchases")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCreditCardPurchases(@HeaderParam("Authorization") String token, @PathParam("cardId") String cardId) throws Exception{
+        return creditCardService.getCreditCardPurchases(token, cardId);
     }
 
 }

@@ -24,5 +24,6 @@ public interface DataStoreService {
 
     //credit card operations
     public List<CreditCard> getCreditCards(String userId);
+    public CreditCard getCreditCard(String id, String userId);
     public List<CreditCardPurchase> getCreditCardPurchases(String id);
 }

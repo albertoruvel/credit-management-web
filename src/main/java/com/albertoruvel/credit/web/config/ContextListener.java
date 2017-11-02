@@ -5,7 +5,7 @@ import com.albertoruvel.credit.web.data.CreditCardPurchase;
 import com.albertoruvel.credit.web.data.UserAccount;
 import com.albertoruvel.credit.web.data.UserConfiguration;
 import com.albertoruvel.credit.web.service.AccountService;
-import com.albertoruvel.credit.web.service.CreditCardPeriodCheckJob;
+import com.albertoruvel.credit.web.service.job.CreditCardPeriodCheckJob;
 import com.albertoruvel.credit.web.service.CreditCardService;
 import com.albertoruvel.credit.web.service.DataStoreService;
 import com.albertoruvel.credit.web.service.impl.AccountServiceImpl;
@@ -59,8 +59,8 @@ public class ContextListener extends GuiceServletContextListener {
             JobDetail periodCheckJob = JobBuilder.newJob(CreditCardPeriodCheckJob.class).withIdentity("CreditCardPeriodCheckJob").build();
             Trigger trigger = TriggerBuilder.newTrigger()
                     .startNow()
-                    .withSchedule(SimpleScheduleBuilder.repeatHourlyForever(12)).build();
-
+                    //.withSchedule(SimpleScheduleBuilder.repeatHourlyForever(24)).build(); TODO: Set to 24HRS after testing
+                    .withSchedule(SimpleScheduleBuilder.repeatMinutelyForever(2)).build(); //TODO: testing purposes
             scheduler.scheduleJob(periodCheckJob, trigger);
             scheduler.start();
         }catch(SchedulerException ex){

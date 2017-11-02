@@ -7,6 +7,7 @@ import com.albertoruvel.credit.web.data.UserConfiguration;
 import com.albertoruvel.credit.web.data.dto.req.NewCreditCardPurchase;
 import com.albertoruvel.credit.web.data.dto.req.NewCreditCardRequest;
 import com.albertoruvel.credit.web.data.dto.resp.CreditCardData;
+import com.albertoruvel.credit.web.data.dto.resp.CreditCardPurchaseData;
 import com.albertoruvel.credit.web.data.dto.resp.ExecutionResult;
 import com.albertoruvel.credit.web.data.dto.resp.PieChartItem;
 import com.albertoruvel.credit.web.service.CreditCardService;
@@ -23,6 +24,10 @@ import java.util.List;
 import java.util.TimeZone;
 import java.util.logging.Logger;
 
+import static com.albertoruvel.credit.web.data.util.TransformationUtils.transformCreditCardPurchases;
+import static com.albertoruvel.credit.web.data.util.TransformationUtils.transformCreditCards;
+import static com.albertoruvel.credit.web.data.util.TransformationUtils.transformPieChartItem;
+
 @Singleton
 public class CreditCardServiceImpl implements CreditCardService {
 
@@ -33,7 +38,8 @@ public class CreditCardServiceImpl implements CreditCardService {
     private static final DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
 
     static {
-        dateFormat.setTimeZone(TimeZone.getTimeZone("PST"));}
+        dateFormat.setTimeZone(TimeZone.getTimeZone("PST"));
+    }
 
     @Override
     public Response saveCreditCard(String token, NewCreditCardRequest request) throws Exception {
@@ -67,22 +73,14 @@ public class CreditCardServiceImpl implements CreditCardService {
 
         //get all credit cards
         List<CreditCard> creditCards = dataStoreService.getCreditCards(userAccount.getId());
-        List<CreditCardData> data = new ArrayList<>();
-        CreditCardData cData;
-        for (CreditCard creditCard : creditCards) {
-            cData = new CreditCardData(creditCard.getId(), creditCard.getName(), creditCard.getAnnualFee(),
-                    creditCard.getMaxSalary(), creditCard.getPeriodDate(), creditCard.getPayDate(),
-                    creditCard.getRegistrationDate(), calculateCurrentSalary(creditCard.getId()));
-            data.add(cData);
-        }
-
+        List<CreditCardData> data = transformCreditCards(creditCards);
         //return response
         return Response.ok(data).build();
     }
 
     @Override
     public Response getPieChartByCreditCards(String token) throws Exception {
-        try{
+        try {
             UserAccount userAccount = dataStoreService.getAccountByToken(token);
             UserConfiguration configuration = dataStoreService.getUserConfiguration(userAccount.getId());
             if (userAccount == null) {
@@ -98,17 +96,17 @@ public class CreditCardServiceImpl implements CreditCardService {
                 //get all purchases from credit card
                 purchases = dataStoreService.getCreditCardPurchases(creditCard.getId());
                 double total = 0.0;
-                for (CreditCardPurchase purchase : purchases){
+                for (CreditCardPurchase purchase : purchases) {
                     total += purchase.getTotal();
                 }
                 monthlyTotal += total;
-                items.add(new PieChartItem(creditCard.getName(), total));
+                items.add(transformPieChartItem(creditCard.getName(), total));
             }
 
             double free = configuration.getMonthlyIncome() - monthlyTotal;
             items.add(new PieChartItem("Monthly free", free));
             return Response.ok(items).build();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             throw new RuntimeException("Could not complete request", ex);
         }
     }
@@ -117,7 +115,7 @@ public class CreditCardServiceImpl implements CreditCardService {
     public Response addNewCreditCardPurchase(String header, NewCreditCardPurchase request) throws Exception {
         //get account
         UserAccount account = dataStoreService.getAccountByToken(header);
-        if (account == null){
+        if (account == null) {
             throw new RuntimeException("No account found for token");
         }
 
@@ -135,10 +133,22 @@ public class CreditCardServiceImpl implements CreditCardService {
         return Response.ok(new ExecutionResult("Credit card have been added", true)).build();
     }
 
-    private Double calculateCurrentSalary(String creditCardId) {
-        //TODO: calculate getting all current movements within current period and a sum of all of those prices
-        return 999.9;
+    @Override
+    public Response getCreditCardPurchases(String token, String cardId) throws Exception {
+        UserAccount account = dataStoreService.getAccountByToken(token);
+        if (account == null) {
+            throw new RuntimeException("No account found for token");
+        }
+        //check if the credit card exists
+        CreditCard creditCard = dataStoreService.getCreditCard(cardId, account.getId());
+        if (creditCard == null) {
+            throw new RuntimeException("No credit card was found");
+        }
+
+        //get purchases
+        List<CreditCardPurchase> purchases = dataStoreService.getCreditCardPurchases(creditCard.getId());
+        List<CreditCardPurchaseData> data = transformCreditCardPurchases(purchases, dataStoreService);
+
+        return Response.ok(data).build();
     }
-
-
 }
