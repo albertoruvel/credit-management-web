@@ -21,6 +21,9 @@ public class CreditCardPurchase {
     private String purchaseDate;
     private Integer paymentsLeft;
 
+    @Index
+    private String category;
+
     public CreditCardPurchase() {
         this.id = UUID.randomUUID().toString();
     }
@@ -87,5 +90,13 @@ public class CreditCardPurchase {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
